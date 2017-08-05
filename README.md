@@ -26,4 +26,77 @@ Best results follow: https://developer.amazon.com/alexa-skills-kit/alexa-skill-q
     "Your word backwards is " + reversed_word + \
     ". Thank you."
 
-
+### JSON Request example
+```json
+ {
+   "session": {
+     "sessionId": "SessionId.***",
+     "application": {
+       "applicationId": "amzn1.ask.skill.777"
+     },
+     "attributes": {},
+     "user": {
+       "userId": "amzn1.ask.account.****"
+     },
+     "new": false
+   },
+   "request": {
+     "type": "IntentRequest",
+     "requestId": "EdwRequestId.807fedad-c906",
+     "locale": "en-US",
+     "timestamp": "2017-08-05T03:48:57Z",
+     "intent": {
+       "name": "SayThisWordBackwardsIntent",
+       "slots": {
+         "Word": {
+           "name": "Word",
+           "value": "pizza"
+         }
+       }
+     }
+   },
+   "version": "1.0"
+ }
+```
+ ### JSON Response Example
+```json
+ {
+  "version": "1.0",
+  "response": {
+    "outputSpeech": {
+      "type": "PlainText",
+      "text": "Your word backwards is azzip. Thank you."
+    },
+    "card": {
+      "content": "SessionSpeechlet - Your word backwards is azzip. Thank you.",
+      "title": "SessionSpeechlet - SayThisWordBackwardsIntent",
+      "type": "Simple"
+    },
+    "reprompt": {
+      "outputSpeech": {
+        "type": "PlainText",
+        "text": null
+      }
+    },
+    "speechletResponse": {
+      "outputSpeech": {
+        "id": null,
+        "text": "Your word backwards is azzip. Thank you."
+      },
+      "card": {
+        "title": "SessionSpeechlet - SayThisWordBackwardsIntent",
+        "content": "SessionSpeechlet - Your word backwards is azzip. Thank you."
+      },
+      "directives": null,
+      "reprompt": {
+        "outputSpeech": {
+          "id": null,
+          "text": null
+        }
+      },
+      "shouldEndSession": true
+    }
+  },
+  "sessionAttributes": {}
+}
+```
